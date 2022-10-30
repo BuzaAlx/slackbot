@@ -36,7 +36,6 @@ app.message("", async (data) => {
           ],
         },
       });
-      console.log(comment);
       await data.say(`comment added to issue with key: ${found[0]}`);
     } catch (error) {
       await data.say(`I did't find issue with this key:${found[0]} :(`);
@@ -47,6 +46,6 @@ app.message("", async (data) => {
 });
 
 (async () => {
-  await app.start();
+  await app.start(process.env.PORT || 3000);
   console.log("⚡️ Bolt app is running!");
 })();
